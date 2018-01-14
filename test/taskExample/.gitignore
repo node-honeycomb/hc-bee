@@ -1,0 +1,12 @@
+node_modules/
+out/
+coverage/
+/.package/
+config/config.js
+auto_router.js
+auto_config.json
+runtime_config.json
+
+.idea/
+.vscode/
+.DS_Store

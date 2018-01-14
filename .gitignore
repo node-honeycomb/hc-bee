@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+test/example/out
+test/example/runtime_config.json
+test/example/auto_config.json
+.idea/
+test/example/logs/

@@ -1,0 +1,7 @@
+{
+  "cube": {
+    "processors": {
+      ".jsx": "cube-react"
+    }
+  }
+}

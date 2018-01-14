@@ -1,0 +1,14 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "description": "an example app base on honeybee",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "framework",
+    "express"
+  ],
+  "bin": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

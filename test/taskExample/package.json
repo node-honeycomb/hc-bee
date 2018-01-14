@@ -1,0 +1,26 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "An example app base on hc-express",
+  "main": "app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "dependencies": {
+    "hc-express": "*",
+    "lodash": "4.17.4"
+  },
+  "devDependencies": {
+    "api-annotation": "^1.0.0-alpha.2",
+    "intelli-espower-loader": "^1.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2",
+    "power-assert": "^1.4.4",
+    "supertest": "^3.0.0"
+  }
+}
