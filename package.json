@@ -1,6 +1,6 @@
 {
   "name": "hc-express",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "the honeycomb app framework based on express",
   "main": "index.js",
   "scripts": {},

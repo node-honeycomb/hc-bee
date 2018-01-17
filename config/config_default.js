@@ -33,6 +33,23 @@ module.exports = {
    */
   waitForExit: 10000,
   /**
+   * server的配置端
+   */
+  honeycomb: {
+    serverParam: {
+      /**
+       * nginx server  section
+       * key: value
+       */
+      server: {},
+      /**
+       * nginx location section
+       * key: value
+       */
+      location: {}
+    }
+  },
+  /**
    * 是否设置json格式的返回
    * @type {Function|False}
    */
