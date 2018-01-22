@@ -1,5 +1,9 @@
 # hc-express
 
+[![Build Status][travis-image]][travis-url]
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+
 A application framework for building honeycomb's app
 应用框架，用来构建运行在 honeycomb上的app
 
@@ -197,4 +201,11 @@ exports.ctrl = async function (req) {
   return dataObj;  // 请求正常，返回正常的数据对象， 等同于 callback(null, dataObj);
 }
 ```
+
+[travis-image]: https://api.travis-ci.org/node-honeycomb/hc-bee.svg
+[travis-url]: https://travis-ci.org/node-honeycomb/hc-bee
+[npm-image]: https://img.shields.io/npm/v/hc-bee.svg
+[npm-url]: https://npmjs.org/package/hc-bee
+[downloads-image]: https://img.shields.io/npm/dm/hc-bee.svg
+[downloads-url]: https://npmjs.org/package/hc-bee
 

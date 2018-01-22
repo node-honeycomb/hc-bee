@@ -11,8 +11,8 @@ cov:
 	@open ./coverage/lcov-report/index.html
 
 publish: test
-	@tnpm publish
 	@cat package.json | xargs -0 node -p 'JSON.parse(process.argv[1]).version' | xargs git tag
 	@git push origin --tags
+	@npm publish
 
 .PHONY: install test cov publish prepare
