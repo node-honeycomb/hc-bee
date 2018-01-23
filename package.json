@@ -3,7 +3,9 @@
   "version": "0.0.3",
   "description": "the honeycomb app framework based on express",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "make test"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:node-honeycomb/hc-express.git"
