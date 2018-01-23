@@ -1,7 +1,7 @@
 {
   "name": "example",
   "version": "1.0.0",
-  "description": "An example app base on hc-express",
+  "description": "An example app base on hc-bee",
   "main": "app.js",
   "scripts": {
     "test": "make test"
@@ -12,7 +12,7 @@
   },
   "author": "",
   "dependencies": {
-    "hc-express": "*",
+    "hc-bee": "*",
     "lodash": "4.17.4"
   },
   "devDependencies": {
