@@ -1,4 +1,5 @@
-# hc-express
+# hc-bee
+> recommended framework to develop service on honeycomb.
 
 [![Build Status][travis-image]][travis-url]
 [![NPM Version][npm-image]][npm-url]

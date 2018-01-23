@@ -1,6 +1,6 @@
 {
-  "name": "hc-express",
-  "version": "0.0.3",
+  "name": "hc-bee",
+  "version": "0.0.1",
   "description": "the honeycomb app framework based on express",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:node-honeycomb/hc-express.git"
+    "url": "git@github.com:node-honeycomb/hc-bee.git"
   },
   "keywords": [
     "framework",
