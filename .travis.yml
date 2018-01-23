@@ -1,5 +1,4 @@
 language: node_js
 node_js:
-  - "v6.9.1"
   - "v8.9.1"
 
