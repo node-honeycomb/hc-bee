@@ -48,7 +48,7 @@ module.exports = {
           'taobao.com',
           /.*\.alipay\.com$/
         ],
-        match: function (req) {
+        ignore: function (req) {
           // true 表示无需检查referer
           // false 表示需要检查referer
           if (/test_referer_ignore/.test(req.path)) {
