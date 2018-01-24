@@ -6,6 +6,9 @@ module.exports = {
   configDir: './config',
   keys: ['base_framework'],
 
+  errorHandler: function (err, req, res, next) {
+    next();
+  },
   /**
    * 服务的域名
    * @type {String}
