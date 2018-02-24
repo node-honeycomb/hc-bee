@@ -144,6 +144,7 @@ controller约定在`controller/`目录下，框架会递归扫描目录，并自
 express风格的常规controller方法定义
 ```
 /**
+ * 简单GET接口
  * @api {get} /
  * @param req
  * @param res
@@ -152,12 +153,9 @@ express风格的常规controller方法定义
 exports.ctrl = function (req, res, next) {
   res.end('hello');
 };
-```
 
-callback形式，封装了返回机制：
-
-```
 /**
+ * callback形式的封装，该接口默认返回json格式
  * @api {get} /
  * @param req
  * @param callback(err, data, options)
@@ -165,27 +163,60 @@ callback形式，封装了返回机制：
 exports.ctrl = function (req, callback) {
   callback(null, {}); // default is json callback
 };
+
+/**
+ * html页面形式的返回
+ * @api {get} /page
+ */
+exports.page = function (req, callback) {
+  callback(null, {
+    tpl: 'index.html', // view目录中的相对路径
+    data: {}           // 模板中的变量
+  }, 'html'); // default is json callback
+};
+
+/**
+ * POST方法的接口
+ * @api {post} /
+ */
+exports.post = function (req, callback) {}
+
+/**
+ * 多方法的接口
+ * @api {post|patch|delete} /
+ */
+exports.post = function (req, callback) {}
 ```
 
-generator写法：
+
+generator写法(语法和常规写法兼容)：
 
 ```
 /**
  * @api {get} /
- * @param req
  */
 exports.ctrl = function* (req) {
   /**
-   * 直接返回异常对象，等同于 callback(err)
-   * 诱惑直接throw Error
+   * 该模式兼容上述常规写法，只是支持controller方法使用yield
+   * 同时新增以下语法支持：
+   *  1. 异常直接throw
+   *  2. return直接返回数据
    */
-  return new Error('error object');
-
-  return dataObj;  // 请求正常，返回正常的数据对象， 等同于 callback(null, dataObj);
+  if (req.url === '/exception') {
+    throw new Error('error object');
+  } else {
+    return dataObj;  // 请求正常，返回正常的数据对象， 等同于 callback(null, dataObj);
+  }
+}
+/**
+ * @api {get} /
+ */
+exports.ctrl = function* (req, callback) {
+  callback(null, data, opt);
 }
 ```
 
-async写法:
+async写法(同genFun，兼容常规写法):
 
 ```
 /**
@@ -193,13 +224,11 @@ async写法:
  * @param req
  */
 exports.ctrl = async function (req) {
-  /**
-   * 直接返回异常对象，等同于 callback(err)
-   * 诱惑直接throw Error
-   */
-  return new Error('error object');
-
-  return dataObj;  // 请求正常，返回正常的数据对象， 等同于 callback(null, dataObj);
+  if (req.url === '/exception') {
+    new Error('error object');
+  } else {
+    return dataObj;  // 请求正常，返回正常的数据对象， 等同于 callback(null, dataObj);
+  }
 }
 ```
 
