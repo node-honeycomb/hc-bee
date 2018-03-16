@@ -4,6 +4,8 @@
 [![Build Status][travis-image]][travis-url]
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
+[![snyk status][snyk-image]][snyk-url]
+[![dependencies status][dependencies-image]][dependencies-url]
 
 A application framework for building honeycomb's app
 应用框架，用来构建运行在 honeycomb上的app
@@ -238,4 +240,8 @@ exports.ctrl = async function (req) {
 [npm-url]: https://npmjs.org/package/hc-bee
 [downloads-image]: https://img.shields.io/npm/dm/hc-bee.svg
 [downloads-url]: https://npmjs.org/package/hc-bee
+[snyk-image]: https://snyk.io/test/github/node-honeycomb/hc-bee/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/github/node-honeycomb/hc-bee
+[dependencies-image]: https://david-dm.org/node-honeycomb/hc-bee/status.svg
+[dependencies-url]: https://david-dm.org/node-honeycomb/hc-bee
 
