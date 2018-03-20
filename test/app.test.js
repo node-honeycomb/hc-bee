@@ -145,6 +145,26 @@ describe('app.test.js', () => {
         .end(done);
     });
 
+    it ('should error in middleware response correctly.', function (done) {
+      request.get('/test/test_err_middleware')
+        .expect(500)
+        .expect(/code: .*,\nmessage: .*/)
+        .end(done);
+    });
+
+    it ('should error in middleware response correctly.', function (done) {
+      request.get('/test/test_err_middleware')
+        .set('Accept', 'application/json')
+        .expect(500)
+        .expect((res) => {
+          res.body.should.eql({
+            code: 'ERR_GEN_MIDDLEWARE',
+            message: 'err_message'
+          });
+        })
+        .end(done);
+    });
+
     it('should work fine with async function ctrl 1', function (done) {
       request.get('/test/test_async_func1/ok')
         .expect(200)

@@ -1,6 +1,13 @@
 'use strict';
 
 module.exports = function (router) {
+  router.get('/test_err_middleware', function (req, res, next) {
+    next({
+      code: 'err_gen_middleware',
+      message: 'err_message'
+    });
+  });
+
   router.get('/test_middleware', function (req, res, next) {
     if (!req[req.query.q]) {
       return next('method not found');
