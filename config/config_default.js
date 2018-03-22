@@ -9,6 +9,7 @@ module.exports = {
   errorHandler: function (err, req, res, next) {
     next();
   },
+  defaultHttpErrorCode: 500,
   /**
    * 服务的域名
    * @type {String}
