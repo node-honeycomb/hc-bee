@@ -4,6 +4,8 @@ const path = require('path');
 const should = require('should'); // eslint-disable-line
 const supertest = require('supertest');
 const app = require('./env').app;
+const assert = require('power-assert');
+const debug = require('debug')('hc-bee');
 
 describe('app.test.js', () => {
   describe('test config merge', () => {
@@ -226,6 +228,114 @@ describe('app.test.js', () => {
           message: 'async_error'
         })
         .end(done);
+    });
+  });
+
+  describe('combine middleware test', function () {
+    const request = supertest(app.address);
+    describe('combine1', function () {
+      it('switch no middleware', function (done) {
+        request.get('/test/test_combine1')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, ' testCombine1');
+          })
+          .end(done);
+      });
+
+      it('switch mid4 middleware', function (done) {
+        request.get('/test/test_combine1?switchMid=mid4')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'mid4Default testCombine1');
+          })
+          .end(done);
+      });
+
+      it('switch mid5 middleware', function (done) {
+        request.get('/test/test_combine1?switchMid=mid5')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'mid5Config testCombine1');
+          })
+          .end(done);
+      });
+
+      it('switch mid6 middleware', function (done) {
+        request.get('/test/test_combine1?switchMid=mid6')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'mid6Default testCombine1');
+          })
+          .end(done);
+      });
+    });
+
+    describe('combine2', function () {
+      it('switch mid4', function (done) {
+        request.get('/test/test_combine2?switchMid=mid4')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'combine2Mid4Config testCombine2');
+          })
+          .end(done);
+      });
+
+      it('switch mid5', function (done) {
+        request.get('/test/test_combine2?switchMid=mid5')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'combine2Mid5Config testCombine2');
+          })
+          .end(done);
+      });
+
+      it('switch mid6', function (done) {
+        request.get('/test/test_combine2?switchMid=mid6')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'mid6Default testCombine2');
+          })
+          .end(done);
+      });
+    });
+
+    describe('combine3', function () {
+      it('switch mid4', function (done) {
+        request.get('/test/test_combine3?switchMid=mid4')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'combine3Mid4Config testCombine3');
+          })
+          .end(done);
+      });
+
+      it('switch mid5', function (done) {
+        request.get('/test/test_combine3?switchMid=mid5')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'combine2Mid5Config testCombine3');
+          })
+          .end(done);
+      });
+
+      it('switch mid6', function (done) {
+        request.get('/test/test_combine3?switchMid=mid6')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'combine3Mid6Config testCombine3');
+          })
+          .end(done);
+      });
+
+      it('switch midExtra', function (done) {
+        request.get('/test/test_combine3?switchMid=midExtra')
+          .expect(200)
+          .expect((res) => {
+            assert.equal(res.text, 'combine3Mid6Config(extra) testCombine3');
+          })
+          .end(done);
+      });
     });
   });
 });

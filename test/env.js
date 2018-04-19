@@ -118,7 +118,10 @@ app.sortMiddleware([
   'custumMid0',
   'custumMid1',
   'custumMid2',
-  'custumMid3'
+  'custumMid3',
+  'combine1',
+  'combine2',
+  'combine3'
 ]);
 
 app.address = 'http://localhost:12345';

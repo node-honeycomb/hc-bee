@@ -41,6 +41,77 @@ module.exports = {
       module: '../middleware/mid3',
       config: {}
     },
+    customMid4: {
+      enable: false,
+      module: '../middleware/mid4',
+      config: {}
+    },
+    customMid5: {
+      enable: false,
+      module: '../middleware/mid5',
+      config: {
+        overwrite: 'mid5Config'
+      }
+    },
+    customMid6: {
+      enable: false,
+      module: '../middleware/mid6',
+      config: {}
+    },
+    combine1: {
+      enable: true,
+      router: '/test_combine1',
+      module: ['customMid4', 'customMid5', 'customMid6'],
+      config: {}
+    },
+    combine2: {
+      enable: true,
+      router: '/test_combine2',
+      module: ['customMid4', 'customMid5', 'customMid6'],
+      config: {
+        customMid4: {
+          config: {
+            overwrite: 'combine2Mid4Config'
+          }
+        },
+        customMid5: {
+          config: {
+            overwrite: 'combine2Mid5Config'
+          }
+        },
+        customMid6: {
+        }
+      }
+    },
+    combine3: {
+      router: '/test_combine3',
+      enable: true,
+      module: ['combine2', 'customMid6'],
+      config: {
+        combine2: {
+          config: {
+            customMid4: {
+              config: {
+                overwrite: 'combine3Mid4Config'
+              }
+            },
+            customMid6: {
+              config: {
+                overwrite: 'combine3Mid6Config'
+              }
+            }
+          }
+        },
+        customMid6: {
+          match: function (req) {
+            return req.url.indexOf('switchMid=midExtra') !== -1;
+          },
+          config: {
+            overwrite: 'combine3Mid6Config(extra)'
+          }
+        }
+      }
+    },
     referer: {
       enable: true,
       config: {
@@ -72,5 +143,4 @@ module.exports = {
       }
     }
   }
-
 };
