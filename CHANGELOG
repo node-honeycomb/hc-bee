@@ -2,3 +2,4 @@
 0.0.6 add a config for default http error code
 0.0.7 upgrade lodash from 4.16.2 to 4.17.5 to avoid vulnerability. reference: https://snyk.io/vuln/npm:lodash:20180130
 0.0.8 exit on EADDRINUSE
+0.1.0 support combine auth.
