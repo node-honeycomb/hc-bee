@@ -32,6 +32,9 @@ module.exports = function (router, process) {
   router.get('/timeout', process(ctrls['./controller/test.js'].timeout, 'public', true), true);
   router.get('/time', process(ctrls['./controller/test.js'].time, 'public', true), true);
   router.get('/test', process(ctrls['./controller/test.js'].test, 'public', true), true);
+  router.get('/test_combine3', process(ctrls['./controller/test.js'].combine3, 'public', false), false);
+  router.get('/test_combine2', process(ctrls['./controller/test.js'].combine2, 'public', false), false);
+  router.get('/test_combine1', process(ctrls['./controller/test.js'].combine1, 'public', false), false);
   router.get('/test_async_func3/:status', process(ctrls['./controller/test.js'].asyncfn3, 'public', false), false);
   router.get('/test_async_func2/:status', process(ctrls['./controller/test.js'].asyncfn2, 'public', true), true);
   router.get('/test_async_func1/:status', process(ctrls['./controller/test.js'].asyncfn1, 'public', true), true);

@@ -175,3 +175,27 @@ exports.asyncfn3 = async function (req, res, next) {
     throw new Error('async_error');
   }
 };
+
+/**
+ * @api /test_combine1
+ * @nowrap
+ */
+exports.combine1 = function (req, res) {
+  res.end(' testCombine1');
+};
+
+/**
+ * @api /test_combine2
+ * @nowrap
+ */
+exports.combine2 = function (req, res) {
+  res.end(' testCombine2');
+};
+
+/**
+ * @api /test_combine3
+ * @nowrap
+ */
+exports.combine3 = function (req, res) {
+  res.end(' testCombine3');
+};
