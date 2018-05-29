@@ -337,5 +337,25 @@ describe('app.test.js', () => {
           .end(done);
       });
     });
+
+    describe('`stream` mode proxy statusCode', function () {
+      it('created statusCode', function (done) {
+        request.get('/test/testCreated')
+          .expect(201)
+          .expect((res) => {
+            assert.equal(res.text, 'created');
+          })
+          .end(done);
+      });
+
+      it('proxy created statusCode', function (done) {
+        request.get('/test/testProxyStatusCode201')
+          .expect(201)
+          .expect((res) => {
+            assert.equal(res.text, 'created');
+          })
+          .end(done);
+      });
+    });
   });
 });
