@@ -4,3 +4,4 @@
 0.0.8 exit on EADDRINUSE
 0.1.0 support combine auth.
 0.1.1 fix uncaught string error
+0.1.2 fix statusCode proxy in `stream` mode.

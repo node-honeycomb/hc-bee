@@ -1,5 +1,7 @@
 'use strict';
+
 const log = require('../common/log');
+const urllib = require('urllib');
 
 function* test() {
   let p = new Promise(function (resolve, reject) {
@@ -198,4 +200,24 @@ exports.combine2 = function (req, res) {
  */
 exports.combine3 = function (req, res) {
   res.end(' testCombine3');
+};
+
+/**
+ * @api /testCreated
+ * @nowrap
+ */
+exports.testCreated = function (req, res) {
+  res.status(201).end('created');
+};
+
+/**
+ * @api /testProxyStatusCode201
+ */
+exports.testProxyStatusCode201 = function (req, callback) {
+  urllib.request('http://localhost:12345/test/testCreated', {
+    streaming: true,
+    stream: req
+  }, function (err, data, res) {
+    callback(err, res, 'stream');
+  });
 };
