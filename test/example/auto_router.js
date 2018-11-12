@@ -38,6 +38,7 @@ module.exports = function (router, process) {
   router.get('/test_async_func3/:status', process(ctrls['./controller/test.js'].asyncfn3, 'public', false), false);
   router.get('/test_async_func2/:status', process(ctrls['./controller/test.js'].asyncfn2, 'public', true), true);
   router.get('/test_async_func1/:status', process(ctrls['./controller/test.js'].asyncfn1, 'public', true), true);
+  router.get('/testResJsonError', process(ctrls['./controller/test.js'].testResJsonError, 'public', true), true);
   router.get('/testProxyStatusCode201', process(ctrls['./controller/test.js'].testProxyStatusCode201, 'public', true), true);
   router.get('/testCreated', process(ctrls['./controller/test.js'].testCreated, 'public', false), false);
   router.get('/log_trace_id', process(ctrls['./controller/test.js'].log_trace_id, 'public', true), true);

@@ -357,5 +357,13 @@ describe('app.test.js', () => {
           .end(done);
       });
     });
+    describe('test `res.json` error', function () {
+      it('test `res.json` error', function (done) {
+        request.get('/test/testResJsonError')
+          .expect(500)
+          .expect('{"code":"TYPEERROR","message":"Converting circular structure to JSON"}')
+          .end(done);
+      });
+    });
   });
 });

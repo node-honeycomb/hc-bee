@@ -221,3 +221,12 @@ exports.testProxyStatusCode201 = function (req, callback) {
     callback(err, res, 'stream');
   });
 };
+
+/**
+ * @api /testResJsonError
+ */
+exports.testResJsonError = function (req, callback) {
+  let data = {};
+  data.data = data;
+  callback(null, data);
+};
