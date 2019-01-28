@@ -3,7 +3,7 @@
 module.exports = function (router) {
   router.get('/test_err_middleware', function (req, res, next) {
     next({
-      code: 'err_gen_middleware',
+      code: 'ERR_GEN_MIDDLEWARE',
       message: 'err_message'
     });
   });
