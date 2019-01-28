@@ -7,7 +7,7 @@ module.exports = {
   keys: ['base_framework'],
 
   errorHandler: function (err, req, res, next) {
-    next();
+    next(err);
   },
   defaultHttpErrorCode: 500,
   /**
