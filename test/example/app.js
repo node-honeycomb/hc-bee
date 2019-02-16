@@ -5,7 +5,6 @@
 const Honeybee = require('../../');
 const log = require('../../log');
 const app = new Honeybee();
-
 app.ready(true);
 
 module.exports = app;

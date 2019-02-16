@@ -93,6 +93,8 @@ module.exports = {
   checkConfig: {
     cookieSession: ['secret']
   },
+
+  // TODO 修改兼容koa的middleware
   middleware: {
     static: {
       enable: true,
@@ -162,13 +164,14 @@ module.exports = {
     }
   },
   extension: {
+    // TODO 修改兼容koa的extension
     redirect: {
-      enable: true,
+      enable: false,
       module: '../lib/extension/redirect',
       config: {}
     },
     timer: {
-      enable: true,
+      enable: false,
       module: '../lib/extension/timer'
     }
   }
