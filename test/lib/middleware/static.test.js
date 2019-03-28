@@ -13,4 +13,13 @@ describe('static.test.js', () => {
         .end(done);
     });
   });
+
+  describe('file not exist', () => {
+    const request = supertest(app.address);
+    it('should get 404', (done) => {
+      request.get('/test/assets/not_exist.html')
+        .expect(404)
+        .end(done);
+    });
+  });
 });
