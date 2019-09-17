@@ -20,10 +20,9 @@ describe('utils test', function () {
         c: {deps: 'a'}
       };
       try {
-        utils.sortObjectByKey(loopedDeps);
+        let res = utils.sortObjectByKey(loopedDeps);
       } catch (e) {
-        assert.equal(e.code, 'ERR_ASSERTION');
-        assert.equal(e.message, 'item added into group c created a dependencies error');
+        assert.equal(e, 'Error: item added into group c created a dependencies error');
       }
     });
     it('sort object with non-exits deps', () => {

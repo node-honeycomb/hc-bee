@@ -1,6 +1,6 @@
 {
   "name": "hc-bee",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "the honeycomb app framework based on express",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
     "litelog": "3.0.4",
     "lodash": "4.17.11",
     "minimatch": "3.0.4",
-    "topo": "^3.0.3",
+    "@hapi/topo": "^3.1.3",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
