@@ -8,6 +8,7 @@ describe('order.test.js', () => {
     it('should middleware order fine', () => {
       should(Object.keys(app.plugins.middleware))
         .deepEqual([
+          'appVersion',
           'custumMid2',
           'static',
           'custumMid3',
