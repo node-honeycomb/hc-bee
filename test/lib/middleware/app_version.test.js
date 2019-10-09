@@ -8,7 +8,7 @@ describe('app_version.test.js', function () {
   describe('test middleware app_version', () => {
     const request = supertest(app.address);
     it('should return current version', (done) => {
-      request.get('/test/__app_version__')
+      request.get('/test/app.status')
         .expect(200)
         .expect(function (res) {
           const body = res.body;
@@ -18,5 +18,35 @@ describe('app_version.test.js', function () {
         })
         .end(done);
     });
+
+    it('should return one deps version', (done) => {
+      request.get('/test/app.status')
+        .query({
+          dep: 'hc-proxy'
+        })
+        .expect(200)
+        .expect(function (res) {
+          const body = res.body;
+
+          body.deps.should.have.property('hc-proxy', '^0.0.1');
+        })
+        .end(done);
+    });
+
+    it('should return multiple deps version', (done) => {
+      request.get('/test/app.status')
+        .query({
+          dep: ['hc-proxy', 'litelog']
+        })
+        .expect(200)
+        .expect(function (res) {
+          const body = res.body;
+
+          body.deps.should.have.property('hc-proxy', '^0.0.1');
+          body.deps.should.have.property('litelog', '^0.0.1');
+        })
+        .end(done);
+    });
+    
   });
 });

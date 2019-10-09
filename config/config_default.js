@@ -97,7 +97,7 @@ module.exports = {
     appVersion: {
       enable: true,
       module: '../lib/middleware/app_version',
-      router: '/__app_version__'
+      router: '/app.status'
     },
     static: {
       enable: true,
