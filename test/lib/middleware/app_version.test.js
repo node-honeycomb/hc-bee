@@ -15,7 +15,8 @@ describe('app_version.test.js', function () {
           body.should.have.property('name', 'example');
           body.should.have.property('version', '0.0.1');
           body.should.have.property('build', 1);
-        }).end(done);
+        })
+        .end(done);
     });
   });
 });
