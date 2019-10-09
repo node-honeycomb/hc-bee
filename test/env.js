@@ -104,6 +104,7 @@ app.loadMiddleware({
 app.listMiddleware();
 
 app.sortMiddleware([
+  'appVersion',
   'static',
   'static2',
   'referer',

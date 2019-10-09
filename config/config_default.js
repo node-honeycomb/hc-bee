@@ -94,6 +94,11 @@ module.exports = {
     cookieSession: ['secret']
   },
   middleware: {
+    appVersion: {
+      enable: true,
+      module: '../lib/middleware/app_version',
+      router: '/__app_version__'
+    },
     static: {
       enable: true,
       module: '../lib/middleware/static',
