@@ -9,6 +9,9 @@
     "express"
   ],
   "bin": {},
-  "dependencies": {},
+  "dependencies": {
+    "hc-proxy": "^0.0.1",
+    "litelog": "^0.0.1"
+  },
   "devDependencies": {}
 }
