@@ -36,7 +36,7 @@ describe('app_version.test.js', function () {
     it('should return multiple deps version', (done) => {
       request.get('/test/app.status')
         .query({
-          dep: ['hc-proxy', 'litelog']
+          dep: ['hc-proxy', 'litelog'].join(',')
         })
         .expect(200)
         .expect(function (res) {
