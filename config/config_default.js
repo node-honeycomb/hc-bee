@@ -10,6 +10,7 @@ module.exports = {
     next(err);
   },
   defaultHttpErrorCode: 500,
+  requestTraceId: 'EagleEye-TraceId',
   /**
    * 服务的域名
    * @type {String}
