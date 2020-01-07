@@ -4,7 +4,8 @@
   "description": "the honeycomb app framework based on express",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "cov": "nyc npm run test"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "istanbul": "^0.4.5",
     "mm": "^2.0.0",
     "mocha": "3.2.0",
+    "nyc": "^15.0.0",
     "power-assert": "^1.5.0",
     "should": "^13.1.3",
     "supertest": "^3.0.0",

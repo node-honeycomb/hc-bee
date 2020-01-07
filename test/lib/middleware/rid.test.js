@@ -9,7 +9,7 @@ describe('rid.test.js', () => {
     const request = supertest(app.address);
     it('should log trace id success', (done) => {
       request.get('/test/log_trace_id')
-        .set('x-request-id', 'xxxx')  // 肉眼测试
+        .set('eagleeye-traceid', 'xxxx')  // 肉眼测试
         .expect(200)
         .expect(function (res) {
           res.body.code.should.eql('SUCCESS');
