@@ -76,7 +76,7 @@ describe('app.test.js', () => {
     const request = supertest(app.address);
     it('should response error', function (done) {
       request.get('/test/callback_error')
-        .set('x-request-id', 'idddddddddddd')
+        .set('eagleeye-traceid', 'idddddddddddd')
         .expect(500)
         .expect('Content-Type', /json/)
         .expect('{"code":"ERROR","message":"custom_error","rid":"idddddddddddd"}')
@@ -108,7 +108,7 @@ describe('app.test.js', () => {
     const request = supertest(app.address);
     it('should response error', function (done) {
       request.get('/test/callback_error_err')
-        .set('x-request-id', 'idddddddddddd')
+        .set('eagleeye-traceid', 'idddddddddddd')
         .expect(500)
         .expect('Content-Type', /json/)
         .expect('{"code":"ERROR","message":"custom_error","rid":"idddddddddddd"}')
@@ -120,7 +120,7 @@ describe('app.test.js', () => {
     const request = supertest(app.address);
     it('should response error', function (done) {
       request.get('/test/callback_error_throw')
-        .set('x-request-id', 'idddddddddddd')
+        .set('eagleeye-traceid', 'idddddddddddd')
         .expect(500)
         .expect(/code: ERROR,\nmessage: custom_error,\nrid: idddddddddddd/)
         .end(done);
@@ -131,7 +131,7 @@ describe('app.test.js', () => {
     const request = supertest(app.address);
     it('should work fine with controller callback', function (done) {
       request.get('/test/ctrl')
-        .set('x-request-id', 'idddddddddddd')
+        .set('eagleeye-traceid', 'idddddddddddd')
         .expect(200)
         .expect(/{"code":"SUCCESS","data":.*,"rid":"idddddddddddd"}/)
         .end(done);
