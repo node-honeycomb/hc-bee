@@ -5,3 +5,5 @@ test/example/runtime_config.json
 test/example/auto_config.json
 .idea/
 test/example/logs/
+package-lock.json
+.nyc_output/
