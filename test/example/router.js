@@ -68,6 +68,10 @@ module.exports = function (router) {
     res.redirect('http://illegal.alibaba.com/test_redirect_success');
   });
 
+  router.get('/test_redirect_illegal_no_protocol', function (req, res) {
+    res.redirect('//illegal.alibaba.com/test_redirect_success');
+  })
+
   router.post('/test_body_parser', function (req, res) {
     res.end('success');
   });
