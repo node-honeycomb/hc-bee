@@ -7,3 +7,4 @@ test/example/auto_config.json
 test/example/logs/
 package-lock.json
 .nyc_output/
+.vscode/

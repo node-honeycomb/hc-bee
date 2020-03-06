@@ -46,5 +46,13 @@ describe('redirect.test.js', () => {
           res.text.should.eql('forbidden, stop redirecting to unknow host');
         }).end(done);
     });
+
+    it('should redirect illegal glob domain failed with no protocol, and forbidden', (done) => {
+      request.get('/test/test_redirect_illegal_no_protocol')
+        .expect(403)
+        .expect(function (res) {
+          res.text.should.eql('forbidden, stop redirecting to unknow host');
+        }).end(done);
+    });
   });
 });
