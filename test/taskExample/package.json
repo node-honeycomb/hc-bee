@@ -13,7 +13,7 @@
   "author": "",
   "dependencies": {
     "hc-bee": "*",
-    "lodash": "4.17.15"
+    "lodash": "4.17.19"
   },
   "devDependencies": {
     "api-annotation": "^1.0.0-alpha.2",
