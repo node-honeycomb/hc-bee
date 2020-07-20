@@ -361,7 +361,11 @@ describe('app.test.js', () => {
       it('test `res.json` error', function (done) {
         request.get('/test/testResJsonError')
           .expect(500)
-          .expect('{"code":"TYPEERROR","message":"Converting circular structure to JSON"}')
+          .expect((res) => {
+            let body = res.body;
+            res.body.code.should.eql('TYPEERROR');
+            res.body.message.should.match(/Converting circular structure to JSON/);
+          })
           .end(done);
       });
     });
