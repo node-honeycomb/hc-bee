@@ -51,7 +51,13 @@ function exit() {
     let time  = '';
     if (Array.isArray(v[2])) {
       time = v[2].shift();
-      v[2] = v[2].join(' ');
+      v[2] = v[2].map(v => {
+        if (typeof v === 'object') {
+          return JSON.stringify(v);
+        } else {
+          return v;
+        }
+      }).join(' ');
     }
     console.log.apply(console, [time, '[' + v[1] + ']', v[0],  v[2], '(' + v[3] + ')']);
   });
