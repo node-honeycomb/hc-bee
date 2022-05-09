@@ -1,6 +1,6 @@
 {
   "name": "hc-bee",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "the honeycomb app framework based on express",
   "main": "index.js",
   "scripts": {
