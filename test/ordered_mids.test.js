@@ -7,7 +7,7 @@ describe('order-mids.test.js', () => {
     const dir = path.join(__dirname, 'ordered_mid_example');
 
     exec(
-      `node ${path.join(dir, 'app.js')}`,
+      `${process.execPath} ${path.join(dir, 'app.js')}`,
       {
         cwd: dir,
         env: {
