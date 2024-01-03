@@ -156,8 +156,7 @@ module.exports = {
       enable: true,
       module: '../lib/middleware/csrf',
       config: {
-        saltLength: 8,
-        secretLength: 18
+        secret: null // '0123456789-0123456789-0123456789'
       }
     },
     log: {

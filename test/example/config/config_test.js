@@ -24,6 +24,11 @@ module.exports = {
         secret: 'hello_the_world'
       }
     },
+    csrf: {
+      config: {
+        secret: "0123456789-0123456789-0123456789"
+      }
+    },
     custumMid0: {
       enable: true,
       module: '../middleware/mid0'
